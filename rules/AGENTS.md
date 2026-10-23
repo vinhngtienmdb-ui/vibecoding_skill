@@ -38,6 +38,12 @@
 8. **Điều kiện hoàn thành:**
    - Một nhiệm vụ chỉ được xác nhận hoàn thành khi đáp ứng đầy đủ: Yêu cầu + Quy tắc nghiệp vụ + Triển khai mã nguồn + Kiểm thử + Bảo mật + Triển khai (Deploy) + Bảo trì (Maintenance) + Rà soát + Nghiệm thu + Cập nhật tài liệu.
 
+9. **Nguyên tắc "Tài liệu phản ánh đúng thực tế":**
+   - Tài liệu chỉ được mô tả một biện pháp, chức năng hoặc chỉ số là đã có khi mã nguồn thực tế đã triển khai và có kiểm thử hoặc bằng chứng xác minh tương ứng.
+   - Khẳng định về bảo mật (xác thực, phân quyền, giới hạn tần suất, làm sạch dữ liệu, danh sách trắng) bắt buộc có kiểm thử tự động chứng minh, bao gồm cả trường hợp tấn công bị chặn.
+   - Hạng mục chưa triển khai phải được ghi rõ là hạn chế đã biết hoặc nhiệm vụ chưa hoàn thành, không được đánh dấu hoàn thành trong danh mục kiểm tra.
+   - Số liệu (số lượng bản ghi, phiên bản, số giai đoạn, số tệp) phải được lấy từ dữ liệu thực tế tại thời điểm cập nhật, không sinh ngẫu nhiên hoặc ước lượng.
+
 ---
 
 ## II. Quy Trình VibeCode Và Các Giai Đoạn Trọng Yếu
@@ -129,7 +135,7 @@ Tại mỗi dự án phát triển phần mềm, trí tuệ nhân tạo bắt bu
 
 1. **Tệp Mục lục bộ tài liệu thiết kế (`index.md`):**
    - Là tệp MỤC LỤC BỘ TÀI LIỆU THIẾT KẾ của toàn bộ dự án.
-   - Tập hợp, phân loại và liên kết đến toàn bộ các tệp tài liệu tiếng Việt đã được đánh số thứ tự từ `01` đến `22`.
+   - Tập hợp, phân loại và liên kết đến toàn bộ các tệp tài liệu tiếng Việt đã được đánh số thứ tự từ `01` đến `24`.
    - Phải được cập nhật đồng bộ mỗi khi có tài liệu thiết kế mới hoặc có sự điều chỉnh kiến trúc.
 
 2. **Tệp Nhật ký dự án (`23_NHAT_KY_DU_AN.md`):**
