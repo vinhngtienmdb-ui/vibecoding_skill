@@ -59,6 +59,12 @@ Mục đích: Chuẩn hóa toàn diện quá trình phân tích, thiết kế, x
    - Một nhiệm vụ chỉ được đánh dấu là hoàn thành khi đáp ứng toàn bộ các tiêu chí: Yêu cầu chức năng + Quy tắc nghiệp vụ + Triển khai mã nguồn + Kiểm thử + Bảo mật + Triển khai (Deploy) + Kế hoạch bảo trì (Maintenance) + Rà soát + Nghiệm thu + Cập nhật tài liệu.
    - Thiếu bất kỳ thành phần bắt buộc nào thì trạng thái phải là đang xử lý, cần sửa chữa hoặc bị nghẽn, không được đánh dấu là hoàn thành.
 
+9. **Nguyên tắc "Tài liệu phản ánh đúng thực tế":**
+   - Tài liệu chỉ được mô tả một biện pháp, chức năng hoặc chỉ số là đã có khi mã nguồn thực tế đã triển khai và có kiểm thử hoặc bằng chứng xác minh tương ứng.
+   - Khẳng định về bảo mật (xác thực, phân quyền, giới hạn tần suất, làm sạch dữ liệu, danh sách trắng) bắt buộc có kiểm thử tự động chứng minh, bao gồm cả trường hợp tấn công bị chặn.
+   - Hạng mục chưa triển khai phải được ghi rõ là hạn chế đã biết hoặc nhiệm vụ chưa hoàn thành, không được đánh dấu hoàn thành trong danh mục kiểm tra.
+   - Số liệu (số lượng bản ghi, phiên bản, số giai đoạn, số tệp) phải được lấy từ dữ liệu thực tế tại thời điểm cập nhật, không sinh ngẫu nhiên hoặc ước lượng.
+
 ---
 
 ## II. Cấu Trúc Tổng Thể Quy Trình
@@ -345,7 +351,7 @@ Toàn bộ các tệp tài liệu được tạo ra trong dự án bắt buộc 
 Tại mỗi dự án phần mềm, trí tuệ nhân tạo bắt buộc phải tự động khởi tạo và cập nhật liên tục ba tệp tài liệu quản lý cốt lõi tại thư mục gốc:
 
 ### 1. Tệp Mục Lục Bộ Tài Liệu Thiết Kế (`index.md`)
-- **Mục đích:** Là MỤC LỤC BỘ TÀI LIỆU THIẾT KẾ của toàn bộ dự án, tập hợp liên kết và điều hướng đến toàn bộ hệ thống tài liệu đặc tả và thiết kế kỹ thuật bằng tiếng Việt đã được đánh số thứ tự từ `01` đến `22`.
+- **Mục đích:** Là MỤC LỤC BỘ TÀI LIỆU THIẾT KẾ của toàn bộ dự án, tập hợp liên kết và điều hướng đến toàn bộ hệ thống tài liệu đặc tả và thiết kế kỹ thuật bằng tiếng Việt đã được đánh số thứ tự từ `01` đến `24`.
 - **Quy tắc cập nhật:** Khởi tạo ngay từ đầu và bổ sung liên kết đồng bộ mỗi khi có tài liệu mới hoặc có sự điều chỉnh kiến trúc.
 - **Cấu trúc mẫu của `index.md`:**
 

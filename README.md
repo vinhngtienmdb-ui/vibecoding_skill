@@ -28,6 +28,7 @@ Bộ kỹ năng và quy tắc ràng buộc toàn diện nhằm chuẩn hóa quá
 6. **Không tự ý phát sinh chức năng mới:** Chỉ dừng lại ở mức đề xuất giải pháp, bắt buộc phải chờ người dùng phê duyệt trước khi triển khai.
 7. **Xây dựng từng bước nhỏ - Xác minh - Tiếp tục:** Chia nhỏ theo Sản phẩm -> Phân hệ -> Tính năng -> Nhiệm vụ.
 8. **Điều kiện hoàn thành:** Đáp ứng đủ Yêu cầu + Quy tắc nghiệp vụ + Triển khai mã nguồn + Kiểm thử + Bảo mật + Triển khai (Deploy) + Bảo trì (Maintenance) + Rà soát + Nghiệm thu + Cập nhật tài liệu.
+9. **Tài liệu phản ánh đúng thực tế:** Chỉ mô tả là đã có khi mã nguồn đã triển khai và có kiểm thử chứng minh; khẳng định về bảo mật bắt buộc có kiểm thử trường hợp tấn công bị chặn; hạng mục chưa làm phải ghi là hạn chế đã biết; số liệu lấy từ dữ liệu thực tế.
 
 ---
 
@@ -122,6 +123,21 @@ flowchart TD
 ---
 
 ## V. Hướng Dẫn Cài Đặt
+
+### 1. Claude Code
+
+1. **Cài đặt kỹ năng cho toàn bộ máy:**
+   ```bash
+   git clone https://github.com/vinhngtienmdb-ui/vibecoding_skill.git
+   mkdir -p ~/.claude/skills
+   cp -r vibecoding_skill/skills/vibecoding ~/.claude/skills/vibecoding
+   ```
+   Trên Windows, thư mục đích là `%USERPROFILE%\.claude\skills\vibecoding`.
+2. **Áp dụng quy tắc bắt buộc cho từng dự án:**
+   Sao chép nội dung `rules/AGENTS.md` vào tệp `CLAUDE.md` tại thư mục gốc của dự án (hoặc thêm dòng `@AGENTS.md` vào `CLAUDE.md` sau khi sao chép `AGENTS.md` vào thư mục gốc).
+3. **Kiểm tra:** Mở Claude Code trong dự án và gõ `/vibecoding`, hoặc yêu cầu "áp dụng quy trình VibeCode".
+
+### 2. Google Antigravity (Gemini)
 
 1. **Cài đặt toàn cục (Machine-local):**
    Sao chép thư mục này vào đường dẫn:
