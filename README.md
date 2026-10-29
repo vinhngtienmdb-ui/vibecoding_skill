@@ -12,9 +12,40 @@ Bộ kỹ năng và quy tắc ràng buộc toàn diện nhằm chuẩn hóa quá
 ├── rules/
 │   └── AGENTS.md                  # Quy tắc bắt buộc luôn kích hoạt (Always-on Rules)
 └── skills/
-    └── vibecoding/
-        └── SKILL.md               # Cẩm nang kỹ năng và hướng dẫn chi tiết 13 giai đoạn
+    ├── vibecoding/
+    │   └── SKILL.md               # Cẩm nang kỹ năng và hướng dẫn chi tiết 13 giai đoạn
+    └── Vibecoding_Flow/           # Quy trình phát triển có kiểm soát (xem mục I.1)
+        ├── SKILL.md               # Quy tắc bắt buộc, mức quy mô, chu trình công việc, các cổng
+        ├── GIAI_DOAN_VA_TIEU_CHI.md
+        ├── MAU_TAI_LIEU.md
+        ├── KIEM_THU_VA_TRIEN_KHAI.md
+        ├── SUA_LOI_KHAN_CAP.md
+        ├── QUY_UOC_GIT.md
+        ├── KIEM_TRA_BAO_MAT.md
+        ├── THIET_KE_GIAO_DIEN.md
+        ├── GIAI_PHAP_CO_SAN.md
+        └── DIEM_XEM_TRUOC.md
 ```
+
+### 1. Skill Vibecoding_Flow
+
+Quy trình phát triển phần mềm có kiểm soát cho AI lập trình. `SKILL.md` giữ các quy tắc bắt buộc và được giữ dưới 5.000 token để không bị cắt khi Claude Code nén ngữ cảnh; quy trình chi tiết nằm trong các tệp tham chiếu, AI mở khi thực hiện bước tương ứng.
+
+- 17 nguyên tắc bắt buộc, gồm: không đoán, không phá vỡ, tìm giải pháp có sẵn trước khi viết mã, viết mã đơn giản và dùng lại mã đã có, dọn dẹp những gì AI tạo ra, cho người dùng xem trong lúc làm.
+- 13 giai đoạn có cổng kiểm soát; ba mức quy mô Nhỏ, Vừa, Lớn quyết định giai đoạn và tài liệu phải làm.
+- Chu trình 11 bước cho mỗi công việc, có điểm xem trước sau mỗi lát.
+- Cổng kiểm thử, cổng bảo mật, cổng triển khai, cổng khẩn cấp.
+- Quy trình sửa lỗi khẩn cấp, kiểm tra bảo mật phần A–E, ứng phó sự cố bảo mật.
+- Quy ước Git, sổ dùng chung chống trùng mã, danh sách tự rà soát mã và dọn dẹp.
+- Bộ 27 tài liệu đánh số, mã định danh, ma trận truy vết.
+
+Cài cho Claude Code:
+
+```bash
+cp -r vibecoding_skill/skills/Vibecoding_Flow ~/.claude/skills/Vibecoding_Flow
+```
+
+Trên Windows, thư mục đích là `%USERPROFILE%\.claude\skills\Vibecoding_Flow`. Kiểm tra bằng cách gõ `/Vibecoding_Flow` trong Claude Code.
 
 ---
 
