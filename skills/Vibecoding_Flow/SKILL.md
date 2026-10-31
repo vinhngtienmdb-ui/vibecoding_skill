@@ -37,6 +37,7 @@ Tệp này giữ các quy tắc bắt buộc. Khi thực hiện một quy trình
 15. **Viết mã đơn giản, dùng lại mã đã có** (mọi mức). Trước khi viết mã mới phải tìm trong dự án: đã có thì dùng lại; gần đáp ứng thì mở rộng, báo người dùng trước nếu làm đổi hành vi ở nơi khác. Thư viện đang dùng làm được thì không thêm thư viện mới. Không thêm lớp trừu tượng, tham số, cấu hình cho nhu cầu chưa có; không tối ưu khi chưa có vấn đề hiệu năng.
 16. **Dọn dẹp những gì AI tạo ra.** Tệp tạm, script thử, log, ảnh chụp đặt trong thư mục `tam_thoi/` tại gốc dự án (được Git bỏ qua). Trước khi trình nghiệm thu và cuối mỗi phiên, dọn theo danh sách trong [QUY_UOC_GIT.md](QUY_UOC_GIT.md). Chỉ xóa thứ do AI tạo ra trong công việc; không chắc thì hỏi người dùng.
 17. **Cho người dùng xem trong lúc làm.** Chia công việc thành lát chạy được; sau mỗi lát, chạy ứng dụng cho người dùng xem và thử (trình duyệt tích hợp, ảnh chụp hoặc lệnh gọi thử), dừng chờ phản hồi rồi mới làm tiếp. Cách làm: [DIEM_XEM_TRUOC.md](DIEM_XEM_TRUOC.md).
+18. **Đặt tệp đúng chỗ.** Mã nguồn đặt theo cấu trúc thư mục trong tài liệu `12`. Không tạo tệp mới ở gốc dự án, trừ tệp cấu hình công cụ bắt buộc và phải hỏi trước. Chi tiết: [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md).
 
 ## 3. Bảy khối và mười ba giai đoạn
 
