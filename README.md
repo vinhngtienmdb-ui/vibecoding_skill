@@ -20,7 +20,8 @@ Quy trình phát triển phần mềm có kiểm soát cho AI lập trình: phâ
         ├── KIEM_TRA_BAO_MAT.md
         ├── THIET_KE_GIAO_DIEN.md
         ├── GIAI_PHAP_CO_SAN.md
-        └── DIEM_XEM_TRUOC.md
+        ├── DIEM_XEM_TRUOC.md
+        └── CAU_TRUC_THU_MUC.md
 ```
 
 `SKILL.md` giữ các quy tắc bắt buộc và được giữ dưới 5.000 token để không bị cắt khi Claude Code nén ngữ cảnh. Quy trình chi tiết nằm trong các tệp tham chiếu, AI mở khi thực hiện bước tương ứng.
@@ -29,7 +30,7 @@ Quy trình phát triển phần mềm có kiểm soát cho AI lập trình: phâ
 
 ## II. Nội Dung Chính
 
-- 17 nguyên tắc bắt buộc, gồm: không đoán, không phá vỡ, tìm giải pháp có sẵn trước khi viết mã, viết mã đơn giản và dùng lại mã đã có, dọn dẹp những gì AI tạo ra, cho người dùng xem trong lúc làm.
+- 18 nguyên tắc bắt buộc, gồm: không đoán, không phá vỡ, tìm giải pháp có sẵn trước khi viết mã, viết mã đơn giản và dùng lại mã đã có, dọn dẹp những gì AI tạo ra, cho người dùng xem trong lúc làm, đặt tệp đúng thư mục và không rải tệp ra gốc dự án.
 - 13 giai đoạn có cổng kiểm soát; ba mức quy mô Nhỏ, Vừa, Lớn quyết định giai đoạn và tài liệu phải làm.
 - Chu trình 11 bước cho mỗi công việc, có điểm xem trước sau mỗi lát.
 - Cổng kiểm thử, cổng bảo mật, cổng triển khai, cổng khẩn cấp.

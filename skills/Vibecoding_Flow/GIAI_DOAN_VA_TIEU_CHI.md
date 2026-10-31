@@ -56,8 +56,8 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 
 - **Đầu vào:** yêu cầu chức năng, yêu cầu phi chức năng, yêu cầu nghiệp vụ, tiêu chí nghiệm thu, ràng buộc kỹ thuật.
 - **Tiêu chí đầu vào:** xác định được hệ thống cần làm gì, quy mô, yêu cầu bảo mật, hiệu năng, tích hợp, giới hạn kỹ thuật.
-- **Xử lý:** tìm và phân tích giải pháp có sẵn theo mục 16 của SKILL.md (dự án mẫu, framework, thư viện, mã nguồn riêng của người dùng), chờ người dùng quyết định; thiết kế kiến trúc tổng thể (frontend, backend, cơ sở dữ liệu, API, xác thực, phân quyền, lưu trữ tệp, ghi log, giám sát, sao lưu); chọn công nghệ (ngôn ngữ, framework, hệ quản trị cơ sở dữ liệu, thư viện, công cụ xây dựng, công cụ kiểm thử, môi trường triển khai); kiến trúc bảo mật theo phần A của mục 17 trong SKILL.md, tích hợp, triển khai.
-- **Đầu ra (12, 13, 22):** tài liệu kiến trúc, công nghệ sử dụng, kiến trúc thành phần, kiến trúc bảo mật (dữ liệu nhạy cảm, điểm tiếp nhận dữ liệu, xác thực, ma trận phân quyền), kiến trúc triển khai, ràng buộc kỹ thuật.
+- **Xử lý:** tìm và phân tích giải pháp có sẵn theo mục 16 của SKILL.md (dự án mẫu, framework, thư viện, mã nguồn riêng của người dùng), chờ người dùng quyết định; thiết kế kiến trúc tổng thể (frontend, backend, cơ sở dữ liệu, API, xác thực, phân quyền, lưu trữ tệp, ghi log, giám sát, sao lưu); chọn công nghệ (ngôn ngữ, framework, hệ quản trị cơ sở dữ liệu, thư viện, công cụ xây dựng, công cụ kiểm thử, môi trường triển khai); kiến trúc bảo mật theo phần A của mục 17 trong SKILL.md, tích hợp, triển khai; cấu trúc thư mục theo phần 2 của [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md).
+- **Đầu ra (12, 13, 22):** tài liệu kiến trúc, công nghệ sử dụng, kiến trúc thành phần, kiến trúc bảo mật (dữ liệu nhạy cảm, điểm tiếp nhận dữ liệu, xác thực, ma trận phân quyền), kiến trúc triển khai, cấu trúc thư mục, ràng buộc kỹ thuật.
 - **Tiêu chí đầu ra:** đáp ứng yêu cầu nghiệp vụ và phi chức năng; mở rộng được, bảo trì được, ổn định, bảo mật, tích hợp được, sao lưu và phục hồi được; có phương án triển khai; không còn quyết định kiến trúc quan trọng chưa xác định.
 
 ## 06. Thiết kế giao diện
@@ -83,7 +83,7 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 
 - **Đầu vào:** toàn bộ tài liệu đã phê duyệt.
 - **Tiêu chí đầu vào:** tài liệu quan trọng đầy đủ, nhất quán, có phiên bản, được phê duyệt, không còn mâu thuẫn.
-- **Xử lý:** thiết lập ngữ cảnh AI, chỉ dẫn hệ thống AI, quy tắc phát triển AI, quy tắc viết mã, kho mã nguồn, chiến lược nhánh, môi trường phát triển, môi trường kiểm thử, công cụ kiểm thử, quy trình build và triển khai tự động nếu có, nguồn mã riêng của người dùng dùng cho mục 16, cách chạy ứng dụng để xem trước theo phần 5 của [DIEM_XEM_TRUOC.md](DIEM_XEM_TRUOC.md).
+- **Xử lý:** thiết lập ngữ cảnh AI, chỉ dẫn hệ thống AI, quy tắc phát triển AI, quy tắc viết mã, kho mã nguồn, chiến lược nhánh, môi trường phát triển, môi trường kiểm thử, công cụ kiểm thử, quy trình build và triển khai tự động nếu có, nguồn mã riêng của người dùng dùng cho mục 16, cách chạy ứng dụng để xem trước theo phần 5 của [DIEM_XEM_TRUOC.md](DIEM_XEM_TRUOC.md), `CLAUDE.md` cho từng phần theo phần 4 của [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md).
 - **Đầu ra (18, 19):** quy tắc phát triển AI, chỉ dẫn hệ thống AI, môi trường sẵn sàng lập trình.
 - **Tiêu chí đầu ra:** AI hiểu được sản phẩm, phạm vi, nghiệp vụ, kiến trúc, dữ liệu, tiêu chuẩn mã, cách kiểm thử, giới hạn quyền hạn của mình.
 

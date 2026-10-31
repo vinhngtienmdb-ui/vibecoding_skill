@@ -53,7 +53,8 @@ Thực hiện trên toàn bộ phần thay đổi trước khi trình nghiệm t
 11. Giao diện: chỉ dùng biến dùng chung sinh từ tài liệu `15`; không đặt giá trị cố định mới trong mã.
 12. Dùng lại: không có hàm, thành phần, truy vấn mới trùng chức năng với mã đã có; không có đoạn mã sao chép lặp lại.
 13. Đơn giản: không có lớp trừu tượng, tham số, cấu hình không dùng đến; không viết phức tạp hơn mức yêu cầu cần.
-14. Dọn dẹp: đạt danh sách dọn dẹp bên dưới.
+14. Vị trí tệp: tệp mới nằm đúng thư mục theo tài liệu `12`; không có tệp mới ở gốc dự án khi chưa được người dùng đồng ý (nguyên tắc 18 tại mục 2).
+15. Dọn dẹp: đạt danh sách dọn dẹp bên dưới.
 
 Lỗi phát hiện khi rà soát: sửa ngay và kiểm thử lại, hoặc ghi vào tài liệu `25` nếu cần người dùng quyết định. Công việc mức Lớn: trình danh sách rà soát kèm kết quả từng mục khi nghiệm thu.
 
