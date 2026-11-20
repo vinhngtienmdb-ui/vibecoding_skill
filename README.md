@@ -30,8 +30,10 @@ Quy trình phát triển phần mềm có kiểm soát cho AI lập trình: phâ
 
 ## II. Nội Dung Chính
 
-- 18 nguyên tắc bắt buộc, gồm: không đoán, không phá vỡ, tìm giải pháp có sẵn trước khi viết mã, viết mã đơn giản và dùng lại mã đã có, dọn dẹp những gì AI tạo ra, cho người dùng xem trong lúc làm, đặt tệp đúng thư mục và không rải tệp ra gốc dự án.
-- 13 giai đoạn có cổng kiểm soát; ba mức quy mô Nhỏ, Vừa, Lớn quyết định giai đoạn và tài liệu phải làm.
+- 21 nguyên tắc bắt buộc, gồm: không đoán, không phá vỡ, không làm vượt bước, không sửa mã mù quáng, không lạm dụng công nghệ, tìm giải pháp có sẵn trước khi viết mã, viết mã đơn giản và dùng lại mã đã có, dọn dẹp những gì AI tạo ra, cho người dùng xem trong lúc làm, đặt tệp đúng thư mục và không rải tệp ra gốc dự án.
+- Giải thích dễ hiểu cho người dùng không chuyên lập trình; nói đúng mức đã đạt (đã viết mã, đã chạy thử, đã kiểm thử, đã triển khai, đã nghiệm thu).
+- 13 giai đoạn có cổng kiểm soát, đối chiếu được với quy trình 10 bước; ba mức quy mô Nhỏ, Vừa, Lớn quyết định giai đoạn và tài liệu phải làm.
+- Bộ câu hỏi khởi đầu dự án mới, phạm vi phiên bản tối thiểu (MVP) và lộ trình; mẫu báo cáo 7 mục sau mỗi giai đoạn.
 - Chu trình 11 bước cho mỗi công việc, có điểm xem trước sau mỗi lát.
 - Cổng kiểm thử, cổng bảo mật, cổng triển khai, cổng khẩn cấp.
 - Quy trình sửa lỗi khẩn cấp, kiểm tra bảo mật phần A–E, ứng phó sự cố bảo mật.
