@@ -20,7 +20,7 @@ Chi tiết của mục 7 và mục 8 trong [SKILL.md](SKILL.md). Số "mục" tr
 6. Chạy toàn bộ bộ kiểm thử của dự án, không chỉ phần mới.
 7. Có thay đổi giao diện: kiểm tra trên ứng dụng theo danh sách rà soát giao diện trong [THIET_KE_GIAO_DIEN.md](THIET_KE_GIAO_DIEN.md).
 8. Kiểm tra bảo mật phần C trong [KIEM_TRA_BAO_MAT.md](KIEM_TRA_BAO_MAT.md).
-9. Kiểm thử hiệu năng khi yêu cầu phi chức năng có quy định.
+9. Kiểm thử hiệu năng phù hợp quy mô khi yêu cầu phi chức năng có quy định. Kiểm thử xử lý lỗi: mất mạng, dịch vụ bên ngoài lỗi hoặc chậm, dữ liệu sai. Kiểm thử sao lưu và khôi phục trước lần triển khai đầu tiên và khi thay đổi cơ chế sao lưu.
 
 **Ghi nhận và xử lý**
 
@@ -31,6 +31,10 @@ Chi tiết của mục 7 và mục 8 trong [SKILL.md](SKILL.md). Số "mục" tr
 14. Ghi kết quả kiểm tra bảo mật phần B, C và kết quả tự rà soát mã, dọn dẹp vào lần kiểm thử cuối của công việc trong tài liệu `25`.
 
 ## Triển khai (mục 8)
+
+**Lần triển khai đầu tiên lên môi trường thật** (đề xuất, chờ người dùng xác nhận, ghi vào tài liệu `26`): chọn hosting phù hợp quy mô và ngân sách; tên miền và HTTPS; biến môi trường; cơ sở dữ liệu môi trường thật; sao lưu tự động; log và giám sát lỗi; quy trình quay lui đã chạy thử; CI/CD nếu phù hợp. Dịch vụ phát sinh chi phí phải được người dùng đồng ý.
+
+Không dùng dữ liệu thật để thử thao tác phá hủy (xóa, ghi đè, database migration chưa kiểm thử).
 
 **Chuẩn bị**
 

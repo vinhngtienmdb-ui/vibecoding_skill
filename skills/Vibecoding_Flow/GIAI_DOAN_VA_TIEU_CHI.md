@@ -20,11 +20,34 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 | 12 Triển khai | Phiên bản được duyệt | Hệ thống chạy phiên bản mới | Xác nhận sau triển khai đạt |
 | 13 Vận hành | Hệ thống thực tế, phản hồi | Cải tiến | Có kiểm soát thay đổi |
 
+## Đối chiếu quy trình 10 bước
+
+| Bước | Giai đoạn và phần tương ứng |
+|---|---|
+| 1. Phân tích ý tưởng và yêu cầu | 01 đến 04 |
+| 2. Thiết kế kiến trúc hệ thống | 05 |
+| 3. Thiết kế cơ sở dữ liệu | 07 (phần dữ liệu) |
+| 4. Thiết kế giao diện và trải nghiệm | 06 |
+| 5. Thiết lập dự án và quản lý mã | 08 |
+| 6. Lập trình từng chức năng | 09, chu trình mục 6 của SKILL.md |
+| 7. Bảo mật và phân quyền | Mục 17 của SKILL.md, xuyên suốt 05 đến 13 |
+| 8. Kiểm thử toàn hệ thống | 10 |
+| 9. Triển khai phần mềm | 11, 12 |
+| 10. Bảo trì và phát triển | 13 |
+
+Thứ tự trong quy trình 10 bước đặt cơ sở dữ liệu trước giao diện; trong khung này giao diện (06) làm trước để đặc tả API gắn được vào từng màn hình. Thiết kế dữ liệu sơ bộ được phép làm sớm ở giai đoạn 05 nếu cần cho quyết định kiến trúc.
+
 ## 01. Xác định ý tưởng
 
 - **Đầu vào:** ý tưởng ban đầu, vấn đề, nhu cầu người dùng hoặc tổ chức, bối cảnh, thông tin hiện có.
 - **Tiêu chí đầu vào:** xác định được vấn đề, đối tượng liên quan, mục tiêu sơ bộ. Chưa xác định được vấn đề thì không chuyển tiếp.
 - **Xử lý:** phân tích vấn đề, xác định mục tiêu, đối tượng sử dụng, giá trị, kết quả cần đạt.
+- **Bộ câu hỏi khởi đầu** (dùng cho giai đoạn 01, 02; chỉ hỏi điều chưa có câu trả lời, mỗi lần một nhóm ngắn):
+  1. Vấn đề và người dùng: phần mềm giải quyết vấn đề gì; ai sử dụng; dự kiến bao nhiêu người dùng.
+  2. Loại sản phẩm: website, ứng dụng web hay ứng dụng điện thoại.
+  3. Chức năng: chức năng bắt buộc phải có; chức năng có thể bổ sung sau.
+  4. Dữ liệu và tài khoản: có cần đăng nhập, phân quyền; có cần lưu trữ dữ liệu, tệp (ảnh, video, tài liệu); có dữ liệu cá nhân không.
+  5. Ràng buộc: ngân sách, thời gian triển khai, dịch vụ hoặc hệ thống sẵn có cần dùng.
 - **Đầu ra (04):** tên sản phẩm, tuyên bố sản phẩm, vấn đề, mục tiêu, đối tượng sử dụng, giá trị, kết quả mong muốn, yêu cầu cấp cao, giới hạn ban đầu.
 - **Tiêu chí đầu ra:** rõ ràng, không mâu thuẫn, diễn đạt ngắn gọn được, dùng làm cơ sở phân tích nghiệp vụ được, không chứa yêu cầu kỹ thuật chưa xác định.
 
@@ -33,7 +56,7 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 - **Đầu vào:** tổng quan dự án, mục tiêu, đối tượng sử dụng, yêu cầu ban đầu.
 - **Tiêu chí đầu vào:** mục tiêu tương đối rõ, có đối tượng sử dụng, vấn đề, kết quả mong muốn.
 - **Xử lý:** xác định phạm vi trong (chức năng bắt buộc, ưu tiên, để sau; đối tượng dữ liệu; người dùng), phạm vi ngoài (chức năng chưa làm, hệ thống chưa tích hợp, yêu cầu không thuộc phiên bản hiện tại), giới hạn phiên bản.
-- **Đầu ra (05):** phạm vi sản phẩm, phạm vi chức năng, phạm vi ngoài, phạm vi phiên bản, danh sách ưu tiên.
+- **Đầu ra (05):** phạm vi sản phẩm, phạm vi chức năng, phạm vi ngoài, phạm vi phiên bản, danh sách chức năng phiên bản tối thiểu (MVP) theo thứ tự ưu tiên, lộ trình triển khai đề xuất phù hợp ngân sách và thời gian.
 - **Tiêu chí đầu ra:** trả lời được sản phẩm làm gì, không làm gì, phiên bản hiện tại gồm gì, chức năng nào ưu tiên, ranh giới ở đâu. Không tồn tại chức năng "không rõ thuộc phạm vi hay không". AI không được tự mở rộng phạm vi.
 
 ## 03. Phân tích nghiệp vụ
@@ -56,8 +79,8 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 
 - **Đầu vào:** yêu cầu chức năng, yêu cầu phi chức năng, yêu cầu nghiệp vụ, tiêu chí nghiệm thu, ràng buộc kỹ thuật.
 - **Tiêu chí đầu vào:** xác định được hệ thống cần làm gì, quy mô, yêu cầu bảo mật, hiệu năng, tích hợp, giới hạn kỹ thuật.
-- **Xử lý:** tìm và phân tích giải pháp có sẵn theo mục 16 của SKILL.md (dự án mẫu, framework, thư viện, mã nguồn riêng của người dùng), chờ người dùng quyết định; thiết kế kiến trúc tổng thể (frontend, backend, cơ sở dữ liệu, API, xác thực, phân quyền, lưu trữ tệp, ghi log, giám sát, sao lưu); chọn công nghệ (ngôn ngữ, framework, hệ quản trị cơ sở dữ liệu, thư viện, công cụ xây dựng, công cụ kiểm thử, môi trường triển khai); kiến trúc bảo mật theo phần A của mục 17 trong SKILL.md, tích hợp, triển khai; cấu trúc thư mục theo phần 2 của [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md).
-- **Đầu ra (12, 13, 22):** tài liệu kiến trúc, công nghệ sử dụng, kiến trúc thành phần, kiến trúc bảo mật (dữ liệu nhạy cảm, điểm tiếp nhận dữ liệu, xác thực, ma trận phân quyền), kiến trúc triển khai, cấu trúc thư mục, ràng buộc kỹ thuật.
+- **Xử lý:** tìm và phân tích giải pháp có sẵn theo mục 16 của SKILL.md (dự án mẫu, framework, thư viện, mã nguồn riêng của người dùng), chờ người dùng quyết định; thiết kế kiến trúc tổng thể (frontend, backend, cơ sở dữ liệu, API, xác thực, phân quyền, lưu trữ tệp, dịch vụ bên ngoài như AI, email, thanh toán, ghi log, giám sát, sao lưu); ưu tiên kiến trúc đơn giản, dễ bảo trì, phù hợp số người dùng và ngân sách thực tế (nguyên tắc 21); dịch vụ phát sinh chi phí nêu rõ chi phí dự kiến và chờ người dùng xác nhận; chọn công nghệ (ngôn ngữ, framework, hệ quản trị cơ sở dữ liệu, thư viện, công cụ xây dựng, công cụ kiểm thử, môi trường triển khai); kiến trúc bảo mật theo phần A của mục 17 trong SKILL.md, tích hợp, triển khai; cấu trúc thư mục theo phần 2 của [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md).
+- **Đầu ra (12, 13, 22):** tài liệu kiến trúc kèm sơ đồ kiến trúc, công nghệ sử dụng kèm lý do lựa chọn, kiến trúc thành phần, kiến trúc bảo mật (dữ liệu nhạy cảm, điểm tiếp nhận dữ liệu, xác thực, ma trận phân quyền), kiến trúc triển khai, cấu trúc thư mục, ràng buộc kỹ thuật.
 - **Tiêu chí đầu ra:** đáp ứng yêu cầu nghiệp vụ và phi chức năng; mở rộng được, bảo trì được, ổn định, bảo mật, tích hợp được, sao lưu và phục hồi được; có phương án triển khai; không còn quyết định kiến trúc quan trọng chưa xác định.
 
 ## 06. Thiết kế giao diện
@@ -73,18 +96,18 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 - **Đầu vào:** đối tượng nghiệp vụ, yêu cầu chức năng, quy tắc nghiệp vụ, kiến trúc, đặc tả giao diện.
 - **Tiêu chí đầu vào:** xác định được đối tượng dữ liệu, quan hệ, quy tắc dữ liệu, nhu cầu truy xuất và trao đổi dữ liệu.
 - **Xử lý:**
-  - Dữ liệu: bảng, trường, kiểu dữ liệu, khóa chính, khóa ngoại, quan hệ, ràng buộc, chỉ mục, trạng thái, lịch sử thay đổi, chính sách xóa dữ liệu.
+  - Dữ liệu: bảng, trường, kiểu dữ liệu, khóa chính, khóa ngoại, quan hệ, ràng buộc, chỉ mục, trạng thái, lịch sử thay đổi, chính sách xóa dữ liệu, phân quyền truy cập dữ liệu, kế hoạch database migration và sao lưu. Ưu tiên PostgreSQL hoặc Supabase khi phù hợp. Ảnh, video, tài liệu lưu ở dịch vụ lưu trữ tệp chuyên dụng; cơ sở dữ liệu chỉ lưu thông tin tham chiếu.
   - API: endpoint, phương thức, dữ liệu gửi lên, dữ liệu trả về, xác thực, phân quyền, kiểm tra dữ liệu đầu vào, xử lý lỗi, phân trang, lọc, sắp xếp, quản lý phiên bản.
   - Bổ sung mã API vào đặc tả từng màn hình trong tài liệu `14`.
-- **Đầu ra (16, 17, cập nhật 14, 22):** lược đồ cơ sở dữ liệu, sơ đồ quan hệ, đặc tả API, quy tắc kiểm tra dữ liệu, mô hình lỗi, quy tắc truy cập dữ liệu; dữ liệu nhạy cảm và điểm tiếp nhận dữ liệu theo phần A của mục 17 trong SKILL.md.
+- **Đầu ra (16, 17, cập nhật 14, 22):** lược đồ cơ sở dữ liệu, sơ đồ quan hệ, kế hoạch database migration và sao lưu, đặc tả API, quy tắc kiểm tra dữ liệu, mô hình lỗi, quy tắc truy cập dữ liệu; dữ liệu nhạy cảm và điểm tiếp nhận dữ liệu theo phần A của mục 17 trong SKILL.md.
 - **Tiêu chí đầu ra:** bao phủ toàn bộ dữ liệu cần thiết; không có dữ liệu dư thừa không mục đích; quan hệ rõ; có kiểm tra dữ liệu; có quy tắc bảo toàn dữ liệu; API có hợp đồng rõ; phân quyền truy cập dữ liệu được xác định.
 
 ## 08. Chuẩn bị môi trường AI
 
 - **Đầu vào:** toàn bộ tài liệu đã phê duyệt.
 - **Tiêu chí đầu vào:** tài liệu quan trọng đầy đủ, nhất quán, có phiên bản, được phê duyệt, không còn mâu thuẫn.
-- **Xử lý:** thiết lập ngữ cảnh AI, chỉ dẫn hệ thống AI, quy tắc phát triển AI, quy tắc viết mã, kho mã nguồn, chiến lược nhánh, môi trường phát triển, môi trường kiểm thử, công cụ kiểm thử, quy trình build và triển khai tự động nếu có, nguồn mã riêng của người dùng dùng cho mục 16, cách chạy ứng dụng để xem trước theo phần 5 của [DIEM_XEM_TRUOC.md](DIEM_XEM_TRUOC.md), `CLAUDE.md` cho từng phần theo phần 4 của [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md).
-- **Đầu ra (18, 19):** quy tắc phát triển AI, chỉ dẫn hệ thống AI, môi trường sẵn sàng lập trình.
+- **Xử lý:** thiết lập ngữ cảnh AI, chỉ dẫn hệ thống AI, quy tắc phát triển AI, quy tắc viết mã, kho mã nguồn, chiến lược nhánh, môi trường phát triển, môi trường kiểm thử, công cụ kiểm thử, quy trình build và triển khai tự động nếu có, nguồn mã riêng của người dùng dùng cho mục 16, cách chạy ứng dụng để xem trước theo phần 5 của [DIEM_XEM_TRUOC.md](DIEM_XEM_TRUOC.md), `CLAUDE.md` cho từng phần theo phần 4 của [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md). Bộ khung dự án: khởi tạo Git (hỏi trước theo mục 14), kết nối GitHub khi người dùng cho phép, cấu trúc thư mục theo tài liệu `12`, `README.md`, `.gitignore`, `.env.example` không chứa khóa bí mật, quy tắc đặt tên, công cụ kiểm tra mã (lint) và định dạng mã.
+- **Đầu ra (18, 19):** quy tắc phát triển AI, chỉ dẫn hệ thống AI, bộ khung dự án chạy được và có quản lý phiên bản, môi trường sẵn sàng lập trình.
 - **Tiêu chí đầu ra:** AI hiểu được sản phẩm, phạm vi, nghiệp vụ, kiến trúc, dữ liệu, tiêu chuẩn mã, cách kiểm thử, giới hạn quyền hạn của mình.
 
 ## 09. Xây dựng
@@ -99,8 +122,8 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 
 - **Đầu vào:** mã nguồn, tiêu chí nghiệm thu, kịch bản kiểm thử, quy tắc nghiệp vụ, yêu cầu bảo mật.
 - **Tiêu chí đầu vào:** chức năng đã lập trình xong, có kịch bản kiểm thử, tiêu chí nghiệm thu, môi trường kiểm thử.
-- **Xử lý:** theo mục 7 của SKILL.md và các bước trong [KIEM_THU_VA_TRIEN_KHAI.md](KIEM_THU_VA_TRIEN_KHAI.md). Kiểm thử chức năng; nghiệp vụ; giao diện (bố cục, thao tác, responsive, trạng thái, thông báo); tích hợp; phân quyền theo từng vai trò; dữ liệu (kiểm tra đầu vào, toàn vẹn, quan hệ, trùng lặp, mất dữ liệu); bảo mật theo phần C của mục 17; hiệu năng khi cần; hồi quy.
-- **Đầu ra (20, 21, 22, 25, 27):** kết quả kiểm thử, danh sách lỗi, kết quả hồi quy, đánh giá chất lượng, kết quả kiểm tra bao phủ.
+- **Xử lý:** theo mục 7 của SKILL.md và các bước trong [KIEM_THU_VA_TRIEN_KHAI.md](KIEM_THU_VA_TRIEN_KHAI.md). Mã chạy được chưa phải là phần mềm hoàn thiện. Kiểm thử đơn vị, tích hợp, đầu cuối; kiểm thử chức năng; nghiệp vụ; giao diện (bố cục, thao tác, responsive, trạng thái, thông báo); tích hợp; phân quyền theo từng vai trò; dữ liệu (kiểm tra đầu vào, toàn vẹn, quan hệ, trùng lặp, mất dữ liệu); bảo mật theo phần C của mục 17; xử lý lỗi (mất mạng, dịch vụ bên ngoài lỗi, dữ liệu sai); hiệu năng phù hợp quy mô; sao lưu và khôi phục; hồi quy.
+- **Đầu ra (20, 21, 22, 25, 27):** kết quả kiểm thử, danh sách lỗi còn tồn tại, kết quả hồi quy, đánh giá chất lượng, kết quả kiểm tra bao phủ, kết luận đủ hay chưa đủ điều kiện triển khai.
 - **Tiêu chí đầu ra:** đạt cổng kiểm thử tại mục 7 của SKILL.md (bao gồm cổng bảo mật); mọi lỗi còn lại có quyết định xử lý.
 
 ## 11. Nghiệm thu và phát hành phiên bản
@@ -124,5 +147,5 @@ Mỗi giai đoạn: đầu vào → kiểm tra đầu vào → xử lý → ki�
 - **Đầu vào:** hệ thống thực tế, phản hồi người dùng, log lỗi, dữ liệu hiệu năng, sự kiện bảo mật, yêu cầu thay đổi.
 - **Tiêu chí đầu vào:** mọi yêu cầu thay đổi được ghi nhận và phân loại trong tài liệu `24`; mọi lỗi được ghi nhận trong tài liệu `25`.
 - **Xử lý:** theo dõi lỗi, hiệu năng; kiểm tra bảo mật định kỳ theo phần E của mục 17; sao lưu, phục hồi; phân tích; xếp ưu tiên và mức quy mô; thay đổi theo quy trình quản lý thay đổi; sự cố khẩn cấp theo mục 13 của SKILL.md; kiểm thử; phát hành; triển khai; rà soát.
-- **Đầu ra (24 và tài liệu liên quan):** sửa lỗi, cải tiến, chức năng mới đã được duyệt, tài liệu, yêu cầu, kiến trúc được cập nhật.
+- **Đầu ra (24 và tài liệu liên quan):** kế hoạch bảo trì (theo dõi lỗi, sao lưu định kỳ, cập nhật thư viện và bản vá bảo mật, kiểm tra khả năng phục hồi), danh sách cải tiến theo mức ưu tiên từ phản hồi người dùng, sửa lỗi, cải tiến, chức năng mới đã được duyệt, tài liệu, yêu cầu, kiến trúc được cập nhật.
 - **Tiêu chí đầu ra:** mọi thay đổi có lý do, phạm vi, đánh giá ảnh hưởng, được kiểm thử, được ghi nhận phiên bản, không làm mất kiểm soát hệ thống.

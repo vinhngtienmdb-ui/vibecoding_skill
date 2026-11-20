@@ -14,18 +14,22 @@ Phần nào áp dụng khi nào, nơi ghi kết quả và cổng bảo mật: xe
 1. Liệt kê dữ liệu nhạy cảm: mật khẩu, dữ liệu cá nhân, dữ liệu tài chính, khóa bí mật. Xác định cách lưu trữ và người được truy cập.
 2. Liệt kê điểm tiếp nhận dữ liệu từ bên ngoài: biểu mẫu, API, tải tệp lên, liên kết với hệ thống khác.
 3. Xác định cách xác thực, thời hạn phiên đăng nhập, ma trận phân quyền theo tài liệu `08`.
-4. Ghi vào tài liệu `22`, trình người dùng phê duyệt cùng kiến trúc.
+4. Thư viện và dịch vụ bên ngoài: đánh giá độ tin cậy, dữ liệu gửi đi, quyền được cấp, nơi lưu dữ liệu.
+5. Hệ thống thu thập dữ liệu cá nhân: rà soát yêu cầu pháp lý hiện hành tại Việt Nam về bảo vệ dữ liệu cá nhân (chính sách quyền riêng tư, sự đồng ý, thời hạn lưu trữ, chuyển dữ liệu ra nước ngoài kể cả qua dịch vụ đặt máy chủ ở nước ngoài). Tra văn bản đang có hiệu lực, không dựa vào trí nhớ; điểm chưa chắc chắn ghi rõ để người dùng hoặc chuyên gia pháp lý xác nhận.
+6. Ghi vào tài liệu `22`, trình người dùng phê duyệt cùng kiến trúc.
 
 **B. Lập trình** (thực hiện cùng danh sách tự rà soát mã trong [QUY_UOC_GIT.md](QUY_UOC_GIT.md))
 1. Mật khẩu băm bằng thuật toán chuyên dụng (bcrypt, Argon2); không lưu dạng có thể giải ngược.
 2. Mọi truy vấn cơ sở dữ liệu dùng tham số hóa hoặc ORM; không ghép chuỗi.
 3. Dữ liệu đầu vào kiểm tra phía máy chủ: kiểu, độ dài, định dạng, giá trị cho phép.
 4. Dữ liệu hiển thị ra giao diện được mã hóa ký tự đặc biệt, chống chèn mã.
-5. Mỗi API kiểm tra xác thực và quyền; kiểm tra người dùng chỉ truy cập được dữ liệu của mình.
+5. Mỗi API kiểm tra xác thực và quyền tại máy chủ hoặc tầng dữ liệu tin cậy (ví dụ chính sách phân quyền theo dòng của cơ sở dữ liệu), không chỉ ẩn nút trên giao diện; kiểm tra người dùng chỉ truy cập được dữ liệu của mình; cấp quyền theo nguyên tắc quyền tối thiểu.
 6. Tải tệp lên: giới hạn loại tệp, kích thước; đổi tên tệp; không lưu trong thư mục chạy được mã.
-7. Đăng nhập và thao tác nhạy cảm có giới hạn số lần thử.
+7. Đăng nhập, thao tác nhạy cảm và API tốn chi phí hoặc mở công khai (gọi AI, gửi email) có giới hạn số lần gọi.
 8. Khóa bí mật đọc từ biến môi trường hoặc kho khóa bí mật; không nằm trong mã, tệp cấu hình được commit, log.
 9. Thông báo lỗi cho người dùng không chứa thông tin kỹ thuật; chi tiết chỉ ghi vào log.
+10. Log không ghi mật khẩu, token, khóa bí mật, dữ liệu cá nhân đầy đủ.
+11. Phiên đăng nhập dùng cookie: chống giả mạo yêu cầu (CSRF) bằng token hoặc thuộc tính SameSite.
 
 **C. Kiểm thử** (mục 7)
 

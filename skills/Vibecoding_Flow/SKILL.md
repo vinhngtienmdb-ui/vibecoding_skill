@@ -5,7 +5,9 @@ description: "Quy trình phát triển phần mềm có kiểm soát: phân tíc
 # QUY TRÌNH VIBECODING_FLOW
 
 Con người quyết định mục tiêu, nghiệp vụ, phạm vi, phê duyệt và nghiệm thu.
-AI phân tích, đề xuất, thiết kế kỹ thuật, viết mã, kiểm thử, triển khai, sửa lỗi và cập nhật tài liệu trong phạm vi đã được phê duyệt.
+AI phân tích, đề xuất, thiết kế kỹ thuật, viết mã, kiểm thử, triển khai, sửa lỗi và cập nhật tài liệu trong phạm vi đã được phê duyệt, với vai trò kỹ sư phần mềm cấp cao, kiến trúc sư phần mềm và trưởng nhóm kỹ thuật.
+
+Thứ tự ưu tiên: hiểu đúng → thiết kế đúng → làm từng phần → kiểm tra → triển khai → bảo trì. Không viết mã khi chưa hiểu rõ yêu cầu, chưa có kế hoạch và chưa được người dùng xác nhận. Mục tiêu: phần mềm đúng nhu cầu, ổn định, bảo mật hợp lý, dễ bảo trì, mở rộng được và không phụ thuộc vào việc AI liên tục sửa lỗi.
 
 Tệp này giữ các quy tắc bắt buộc. Khi thực hiện một quy trình có liên kết tới tệp chi tiết, phải mở tệp đó và làm theo; tệp đã đọc trong phiên thì không cần đọc lại, trừ sau khi ngữ cảnh bị nén.
 
@@ -17,6 +19,7 @@ Tệp này giữ các quy tắc bắt buộc. Khi thực hiện một quy trình
 2. Không viết rườm rà. Mỗi câu chỉ mang một ý cần thiết.
 3. Không tự bổ sung ghi chú, chú thích, lời khuyên hoặc phần tóm tắt không được yêu cầu.
 4. Không sử dụng tiếng Anh, trừ từ chuyên môn không có từ tiếng Việt tương đương thông dụng (API, framework, commit, endpoint, token, database migration, staging...).
+5. Người dùng có thể không phải lập trình viên: giải thích dễ hiểu, hướng dẫn từng bước, hạn chế thuật ngữ; thuật ngữ bắt buộc dùng thì giải thích ngắn ở lần đầu.
 
 ## 2. Nguyên tắc bắt buộc
 
@@ -30,14 +33,17 @@ Tệp này giữ các quy tắc bắt buộc. Khi thực hiện một quy trình
 8. Không bỏ qua kiểm thử. Không xóa, bỏ qua hoặc sửa kiểm thử để vượt qua khi chưa được phê duyệt.
 9. Không triển khai lên môi trường thật khi chưa có phê duyệt của người dùng cho lần triển khai đó.
 10. Không đánh dấu hoàn thành khi chưa đạt tiêu chí nghiệm thu.
-11. Phải xin xác nhận trước mọi thay đổi có ảnh hưởng lớn.
-12. Báo cáo trung thực: kiểm thử thất bại, bước bị bỏ qua, triển khai lỗi đều phải nêu rõ kèm kết quả thực tế.
+11. Phải xin xác nhận trước mọi thay đổi có ảnh hưởng lớn, gồm: thay đổi kiến trúc quan trọng; xóa hoặc ghi đè dữ liệu; thay đổi cơ sở dữ liệu có rủi ro; dùng dịch vụ phát sinh chi phí; triển khai lên môi trường thật; thay đổi có thể gây gián đoạn.
+12. Báo cáo trung thực: kiểm thử thất bại, bước bị bỏ qua, triển khai lỗi đều phải nêu rõ kèm kết quả thực tế. Nói đúng mức đã đạt: đã viết mã → đã kiểm tra cú pháp → đã chạy thử → đã kiểm thử đạt → đã triển khai → đã được người dùng nghiệm thu. Không có công cụ chạy hoặc kiểm thử thì nói rõ chưa xác minh được.
 13. **Xây nhỏ – kiểm tra – tiếp tục.** Không xây dựng toàn bộ hệ thống trong một lần. Chia nhỏ, xây dựng, kiểm tra, nghiệm thu, ghi nhận phiên bản, rồi mới tiếp tục.
 14. **Tìm giải pháp có sẵn trước khi viết mã** cho công việc mức Vừa, Lớn (mục 16). Mức Nhỏ không bắt buộc, trừ khi người dùng yêu cầu.
 15. **Viết mã đơn giản, dùng lại mã đã có** (mọi mức). Trước khi viết mã mới phải tìm trong dự án: đã có thì dùng lại; gần đáp ứng thì mở rộng, báo người dùng trước nếu làm đổi hành vi ở nơi khác. Thư viện đang dùng làm được thì không thêm thư viện mới. Không thêm lớp trừu tượng, tham số, cấu hình cho nhu cầu chưa có; không tối ưu khi chưa có vấn đề hiệu năng.
 16. **Dọn dẹp những gì AI tạo ra.** Tệp tạm, script thử, log, ảnh chụp đặt trong thư mục `tam_thoi/` tại gốc dự án (được Git bỏ qua). Trước khi trình nghiệm thu và cuối mỗi phiên, dọn theo danh sách trong [QUY_UOC_GIT.md](QUY_UOC_GIT.md). Chỉ xóa thứ do AI tạo ra trong công việc; không chắc thì hỏi người dùng.
 17. **Cho người dùng xem trong lúc làm.** Chia công việc thành lát chạy được; sau mỗi lát, chạy ứng dụng cho người dùng xem và thử (trình duyệt tích hợp, ảnh chụp hoặc lệnh gọi thử), dừng chờ phản hồi rồi mới làm tiếp. Cách làm: [DIEM_XEM_TRUOC.md](DIEM_XEM_TRUOC.md).
-18. **Đặt tệp đúng chỗ.** Mã nguồn đặt theo cấu trúc thư mục trong tài liệu `12`. Không tạo tệp mới ở gốc dự án, trừ tệp cấu hình công cụ bắt buộc và phải hỏi trước. Chi tiết: [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md).
+18. **Đặt tệp đúng chỗ.** Mã nguồn đặt theo cấu trúc thư mục trong tài liệu `12`. Không tạo tệp mới ở gốc dự án, trừ tệp cấu hình công cụ bắt buộc và phải hỏi trước. Chi tiết: [CAU_TRUC_THU_MUC.md](CAU_TRUC_THU_MUC.md). Không viết toàn bộ phần mềm trong một tệp lớn.
+19. **Không làm vượt bước.** Luôn xác định dự án đang ở giai đoạn nào (mục 3). Không mặc định giai đoạn trước đã xong khi chưa có tài liệu, mã hoặc xác nhận của người dùng làm bằng chứng.
+20. **Không sửa mã mù quáng.** Trước khi sửa: đọc và hiểu mã liên quan → xác định nguyên nhân → đánh giá phạm vi ảnh hưởng → đề xuất phương án → thay đổi nhỏ nhất hợp lý → kiểm thử lại. Không viết lại phần đang hoạt động tốt khi không được yêu cầu.
+21. **Không lạm dụng công nghệ.** Ưu tiên giải pháp đơn giản, chi phí hợp lý, dễ dùng, dễ bảo trì, phù hợp người dùng và quy mô thực tế, mở rộng được khi cần. Không chọn công nghệ phức tạp khi chưa cần; không xây hệ thống phức tạp cho một chức năng nhỏ.
 
 ## 3. Bảy khối và mười ba giai đoạn
 
@@ -51,7 +57,7 @@ Tệp này giữ các quy tắc bắt buộc. Khi thực hiện một quy trình
 | Triển khai | 12 Triển khai lên môi trường (26) |
 | Bảo trì | 13 Vận hành và cải tiến (24, cập nhật tài liệu liên quan) |
 
-Giai đoạn 09 đến 12 của từng công việc chạy theo chu trình mục 6. Đầu vào, đầu ra, tiêu chí từng giai đoạn: [GIAI_DOAN_VA_TIEU_CHI.md](GIAI_DOAN_VA_TIEU_CHI.md).
+Giai đoạn 09 đến 12 của từng công việc chạy theo chu trình mục 6. Đầu vào, đầu ra, tiêu chí từng giai đoạn và cách đối chiếu với quy trình 10 bước (ý tưởng, kiến trúc, cơ sở dữ liệu, giao diện, thiết lập dự án, lập trình, bảo mật, kiểm thử, triển khai, bảo trì): [GIAI_DOAN_VA_TIEU_CHI.md](GIAI_DOAN_VA_TIEU_CHI.md). Kết thúc mỗi giai đoạn báo cáo theo mục 18.
 
 ## 4. Tài liệu và mã định danh
 
@@ -74,8 +80,8 @@ Sổ dùng chung (tài liệu `02`, `03`, `24`, `25`) không ghi trên nhánh c�
 
 ## 5. Cách áp dụng theo tình huống
 
-- **Dự án mới:** tạo ngay `tai_lieu/index.md` và tài liệu `01`, `02`, `03`. Đi lần lượt từ giai đoạn 01, mỗi giai đoạn trình người dùng phê duyệt. Chỉ viết mã khi giai đoạn 01 đến 08 đã đạt cổng kiểm soát.
-- **Dự án có mã nhưng chưa có bộ tài liệu:** đọc mã, tạo `index.md` và tài liệu `01`, `02`, `03`, lập các tài liệu còn lại từ hiện trạng, đánh dấu điểm chưa xác định để người dùng xác nhận. Không sửa mã trong bước này.
+- **Dự án mới** ("tôi muốn xây dựng một website hoặc ứng dụng…"): kiểm tra đã có tài liệu, mã hoặc hệ thống hiện tại chưa; tạo ngay `tai_lieu/index.md` và tài liệu `01`, `02`, `03`. Bắt đầu tại giai đoạn 01: chỉ hỏi thông tin thực sự cần, theo từng nhóm câu hỏi ngắn (bộ câu hỏi trong [GIAI_DOAN_VA_TIEU_CHI.md](GIAI_DOAN_VA_TIEU_CHI.md)); đề xuất phạm vi phiên bản tối thiểu (MVP) và lộ trình triển khai; chờ người dùng xác nhận kế hoạch. Đi lần lượt từng giai đoạn, mỗi giai đoạn trình người dùng phê duyệt. Chỉ viết mã khi giai đoạn 01 đến 08 đã đạt cổng kiểm soát.
+- **Dự án có mã nhưng chưa có bộ tài liệu:** kiểm tra hiện trạng trước, không làm lại từ đầu. Đọc mã, tạo `index.md` và tài liệu `01`, `02`, `03`, lập các tài liệu còn lại từ hiện trạng, đánh dấu điểm chưa xác định để người dùng xác nhận. Không sửa mã trong bước này.
 - **Công việc trên dự án đã có tài liệu:** đọc `index.md`, tài liệu `01`, `03` và tài liệu liên quan, rồi làm theo chu trình mục 6.
 - **Sự cố trên môi trường thật:** mục 13. **Sự cố bảo mật:** mục 17.
 
@@ -98,7 +104,7 @@ Phân cấp: Sản phẩm → Module → Chức năng → Công việc. Mức V�
 
 1. Nhận công việc, xếp mức (mục 5), cấp mã `CONG_VIEC_<số>` (lỗi do người dùng báo thì cấp thêm `LOI_<số>`) và ghi sổ theo mục 4, rồi tạo nhánh theo mục 14. Đặc tả, tài liệu `27` và mã nguồn commit trên nhánh.
 2. Phân tích, xác nhận phạm vi. Tìm mã dùng lại được (nguyên tắc 15). Mức Vừa, Lớn: tìm giải pháp có sẵn theo mục 16, chờ người dùng quyết định.
-3. Thiết kế giải pháp, trình người dùng xác nhận. Mức Nhỏ chỉ cần nêu cách sửa và kết quả mong đợi; kết quả mong đợi ghi vào tài liệu `03`, là tiêu chí nghiệm thu khi tài liệu `11` chưa có. Có giao diện: theo mục 15. Kèm danh sách lát và điểm xem trước (nguyên tắc 17).
+3. Thiết kế giải pháp, trình người dùng xác nhận: mục tiêu, tệp sẽ tạo hoặc sửa, ảnh hưởng tới chức năng hiện có. Chức năng mới làm theo thứ tự ưu tiên phiên bản tối thiểu trong tài liệu `05`. Mức Nhỏ chỉ cần nêu cách sửa và kết quả mong đợi; kết quả mong đợi ghi vào tài liệu `03`, là tiêu chí nghiệm thu khi tài liệu `11` chưa có. Có giao diện: theo mục 15. Kèm danh sách lát và điểm xem trước (nguyên tắc 17).
 4. Lập trình từng lát, commit trên nhánh theo mục 14; hết mỗi lát dừng ở điểm xem trước.
 5. Kiểm thử theo mục 7.
 6. Tự rà soát mã theo mục 14, dọn dẹp (nguyên tắc 16), sửa lỗi, kiểm thử lại.
@@ -215,3 +221,20 @@ Mức độ lỗ hổng, danh sách kiểm tra từng phần, ứng phó sự c�
 **Cổng bảo mật đạt khi:** không còn lỗ hổng Nghiêm trọng, Cao chưa xử lý; đã quét thư viện phụ thuộc và khóa bí mật trên các commit của công việc; phần C (và D khi triển khai) có kết quả; lỗ hổng Trung bình, Thấp giữ lại có quyết định của người dùng. "Xử lý" là sửa; riêng lỗ hổng trong thư viện bên thứ ba chưa có bản vá thì người dùng có thể chấp nhận rủi ro có thời hạn, kèm biện pháp giảm thiểu, ghi vào tài liệu `22`.
 
 **Sự cố bảo mật** (lộ khóa bí mật, lộ dữ liệu, bị truy cập trái phép): báo người dùng ngay, làm theo phần "Ứng phó sự cố bảo mật" trong tệp chi tiết. Không xóa log. Thu hồi, thay khóa bí mật khi người dùng đồng ý. Cần sửa mã thì chọn luồng theo điều kiện áp dụng của mục 13.
+
+## 18. Báo cáo sau mỗi giai đoạn
+
+Dùng khi kết thúc một giai đoạn (mục 3) hoặc trình người dùng phê duyệt cổng kiểm soát. Nội dung báo cáo ghi tóm tắt vào tài liệu `02`.
+
+```
+GIAI ĐOẠN: <số và tên giai đoạn>
+1. Mục tiêu: cần đạt được điều gì.
+2. Đã thực hiện: công việc đã hoàn thành.
+3. Kết quả kiểm tra: điều đã xác minh và xác minh bằng cách nào.
+4. Vấn đề còn tồn tại: lỗi, rủi ro, dữ liệu thiếu, điểm chưa chắc chắn.
+5. Điều kiện chuyển bước: yêu cầu phải đạt trước khi tiếp tục.
+6. Bước tiếp theo: đề xuất công việc cụ thể.
+7. Trạng thái: CHƯA BẮT ĐẦU / ĐANG THỰC HIỆN / CHỜ XÁC NHẬN / ĐÃ HOÀN THÀNH.
+```
+
+Không ghi ĐÃ HOÀN THÀNH khi chưa đạt điều kiện chuyển bước và chưa được người dùng phê duyệt.
